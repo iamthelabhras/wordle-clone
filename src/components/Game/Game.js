@@ -12,12 +12,6 @@ import GuessTracker from '../GuessTracker';
 import BannerWon from '../BannerWon';
 import BannerLost from '../BannerLost';
 
-// Pick a random word on every pageload.
-// const answer = sample(FIVE_LETTER_WORDS);
-
-// To make debugging easier, we'll log the solution in the console.
-// console.info({ answer });
-
 function Game() {
   const [answer, setAnswer] = React.useState( () => sample(FIVE_LETTER_WORDS) );
   const [trackedGuesses, setTrackedGuesses] = React.useState([]);
