@@ -58,7 +58,12 @@ function Game() {
         gameStatus={gameStatus}
       />
       { gameStatus === 'won' && ( 
-          <BannerWon numOfGuesses={trackedGuesses.length}/> 
+          <BannerWon 
+            numOfGuesses={trackedGuesses.length}
+            action={newGame}
+            actionText={`Click here to start a new game!`}
+            actionStyles={`new-game`}
+          /> 
         )
       }
       { gameStatus === 'lost' && ( 
