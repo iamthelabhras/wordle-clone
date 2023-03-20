@@ -13,12 +13,13 @@ import BannerWon from '../BannerWon';
 import BannerLost from '../BannerLost';
 
 // Pick a random word on every pageload.
-const answer = sample(FIVE_LETTER_WORDS);
+// const answer = sample(FIVE_LETTER_WORDS);
 
 // To make debugging easier, we'll log the solution in the console.
-console.info({ answer });
+// console.info({ answer });
 
 function Game() {
+  const [answer, setAnswer] = React.useState( () => sample(FIVE_LETTER_WORDS) );
   const [trackedGuesses, setTrackedGuesses] = React.useState([]);
   const [gameStatus, setGameStatus] = React.useState('running');
 
@@ -36,6 +37,8 @@ function Game() {
   }
   
   function newGame() { 
+    const newAnswer = sample(FIVE_LETTER_WORDS);
+    setAnswer(newAnswer);
     setTrackedGuesses([]);
     setGameStatus('running');
   }
